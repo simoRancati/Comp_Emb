@@ -11,8 +11,9 @@ We performed parameter tuning using a grid search method, taking into account th
 
 **Folder Struture**
 Each primary folder contains code for a specific type of embedding. Inside these primary folders, there are subfolders, each dedicated to a different anomaly detection model. Within each of these subfolders, there are two key files:
-<code>Main.py</code>: This file contains the main pipeline for the model.
-<code>Utils.py</code>: This file includes various functions that are utilized in Main.py.
+
+1) <code>Main.py</code>: This file contains the main pipeline for the model.
+2) <code>Utils.py</code>: This file includes various functions that are utilized in Main.py.
 
 # Training and Evaluation
 Our models were trained on the GISAID Spike proteins from 2021, with a particular emphasis on the Alpha and Delta variants. For the testing phase, we utilized sequences from 2022 and 2023 (up until November 8), a period marked by the spread of the Omicron variants. The models’ performance was evaluated using 16 dominant Omicron lineages, which were identified as true positives. Key metrics such as Precision (Pr), False Positive Rate (Fpr), and Balanced Accuracy (Ba) were calculated for this evaluation.
