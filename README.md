@@ -21,6 +21,8 @@ The Python packages needed are :
 Python 3.9 is required.
 
 # Dataset Generation
+We create a different Dataset for each different embeddig. The codes receive as input the file spikes.fasta and metadataset.csv downloaded from the [GISAID site](https://gisaid.org). In the folder <code>DatasetGeneration</code> are contained the codes to create dataset. In particular:
+1. <code></code>
 
 # Parameter Tuning 
 We performed parameter tuning using a grid search method, taking into account the temporal progression of the data across the four trimesters of 2020. In essence, we trained our models iteratively on an increasing amount of data - first on the first trimester, then on the first and second trimesters, and finally on the first, second, and third trimesters. We then tested the models on the remaining trimesters (second to fourth, third and fourth, and fourth, respectively). The selection of the best parameter combinations for each model was based on the median balanced accuracy.
