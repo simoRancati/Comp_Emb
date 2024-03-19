@@ -24,6 +24,7 @@ Python 3.9 is required.
 We create a different Dataset for each different embeddig. The codes receive as input the file spikes.fasta and metadataset.csv downloaded from the [GISAID site](https://gisaid.org). In the folder <code>DatasetGeneration</code> are contained the codes to create dataset. In particular:
 1. <code>Embedding_Global_dataset.py</code> : Is the main code to generate the different datasets;
 2. <code>utils</code> : Contains the functions used in the main code.
+The code inputs consist of the file.fasta (<code>Spikes.fasta</code>) that contains the amino acid sequences and the file.csv (<code>metadataset.csv</code>) that contains the characteristics of each sequence. Both files can be downloaded from [GISAID](https://gisaid.org)
 
 # Parameter Tuning 
 We performed parameter tuning using a grid search method, taking into account the temporal progression of the data across the four trimesters of 2020. In essence, we trained our models iteratively on an increasing amount of data - first on the first trimester, then on the first and second trimesters, and finally on the first, second, and third trimesters. We then tested the models on the remaining trimesters (second to fourth, third and fourth, and fourth, respectively). The selection of the best parameter combinations for each model was based on the median balanced accuracy.
@@ -34,6 +35,7 @@ Each primary folder <code>ParamTuning</code> contains code for a specific type o
 1. <code>Main.py</code>: This file contains the main pipeline for the model.
 2. <code>Utils.py</code>: This file includes various functions that are utilized in <code>Main.py</code>.
 
+The inputs for the code are derived from the outputs of previous code <code>Embedding_Global_dataset.py</code> executions
 # Training and Evaluation
 Our models were trained on the GISAID Spike proteins from 2021, with a particular emphasis on the Alpha and Delta variants. For the testing phase, we utilized sequences from 2022 and 2023 (up until November 8), a period marked by the spread of the Omicron variants. The models’ performance was evaluated using 16 dominant Omicron lineages, which were identified as true positives. Key metrics such as Precision (Pr), False Positive Rate (Fpr), and Balanced Accuracy (Ba) were calculated for this evaluation.
 
@@ -43,7 +45,7 @@ Each primary folder is dedicated to a specific type of embedding. Within these p
 1. <code>Main.py</code>: This file contains the main pipeline for the model.
 2. <code>Utils.py</code>: This file includes various functions that are utilized in <code>Main.py</code>.
 
-
+The inputs for the code are derived from the outputs of previous code <code>Embedding_Global_dataset.py</code> executions
 
 
 
